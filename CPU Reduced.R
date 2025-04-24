@@ -162,7 +162,8 @@ bsts_3 <- bsts(cpu_index ~ .,
                expected.model.size = 10,
                data = as.data.frame(cbind(train_3$cpu_index, train_reg_reduced_3)) %>% rename('cpu_index' = V1))
 bsts_3_pred <- predict(bsts_3, horizon = n, burn = SuggestBurn(.1, bsts_3), newdata = test_reg_reduced_3)
-
+model_evaluate_3 <- rbind(model_evaluate_3, evaluate(test_3, bsts_3_pred$mean, model = 'BSTS'))
+predict_3 <- predict_3 %>% mutate('BSTS' = bsts_3_pred$mean)
 
 # BSTS
 # ss <- AddLocalLinearTrend(list(), train_3$cpu_index)
