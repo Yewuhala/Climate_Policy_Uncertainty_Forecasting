@@ -8,7 +8,7 @@ library(fpp3)
 library(RTransferEntropy)
 library(readxl)
 
-setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Data')
+setwd('Climate_Policy_Uncertainty_Forecasting/Dataset/Data')
 cpu_data <- read_xlsx('CPU_Data.xlsx')[,c(1,139)]
 cpu_data$Date <- as.Date(cpu_data$Date)
 cpu_data$Date <- ydm(cpu_data$Date)
@@ -78,7 +78,7 @@ bsts_1_pred <- predict(bsts_1, horizon = n, burn = SuggestBurn(.1, bsts_1))
 model_evaluate_1 <- rbind(model_evaluate_1, evaluate(test_1, bsts_1_pred$mean, model = 'BSTS'))
 predict_1 <- predict_1 %>% mutate('BSTS' = bsts_1_pred$mean)
 
-setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
+setwd('Climate_Policy_Uncertainty_Forecasting/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
 
 # NBEATS
 cpu_1_NBEATS <- unlist(read_csv('NBEATS_1.csv')[2])  
@@ -142,7 +142,7 @@ model_evaluate_3 <- rbind(model_evaluate_3, evaluate(test_3, bsts_3_pred$mean, m
 predict_3 <- predict_3 %>% mutate('BSTS' = bsts_3_pred$mean)
 
 
-setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
+setwd('Climate_Policy_Uncertainty_Forecasting/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
 
 # NBEATS
 cpu_3_NBEATS <- unlist(read_csv('NBEATS_3.csv')[2])  
@@ -205,7 +205,7 @@ bsts_6_pred <- predict(bsts_6, horizon = n, burn = SuggestBurn(.1, bsts_6))
 model_evaluate_6 <- rbind(model_evaluate_6, evaluate(test_6, bsts_6_pred$mean, model = 'BSTS'))
 predict_6 <- predict_6 %>% mutate('BSTS' = bsts_6_pred$mean)
 
-setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
+setwd('Climate_Policy_Uncertainty_Forecasting/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
 
 # NBEATS
 cpu_6_NBEATS <- unlist(read_csv('NBEATS_6.csv')[2])  
@@ -266,7 +266,7 @@ bsts_12_pred <- predict(bsts_12, horizon = n, burn = SuggestBurn(.1, bsts_12))
 model_evaluate_12 <- rbind(model_evaluate_12, evaluate(test_12, bsts_12_pred$mean, model = 'BSTS'))
 predict_12 <- predict_12 %>% mutate('BSTS' = bsts_12_pred$mean)
 
-setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
+setwd('Climate_Policy_Uncertainty_Forecasting/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
 
 # NBEATS
 cpu_12_NBEATS <- unlist(read_csv('NBEATS_12.csv')[2])  
@@ -330,7 +330,7 @@ bsts_24_pred <- predict(bsts_24, horizon = n, burn = SuggestBurn(.1, bsts_24))
 model_evaluate_24 <- rbind(model_evaluate_24, evaluate(test_24, bsts_24_pred$mean, model = 'BSTS'))
 predict_24 <- predict_24 %>% mutate('BSTS' = bsts_24_pred$mean)
 
-setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
+setwd('Climate_Policy_Uncertainty_Forecasting/Dataset/Dataset_Deep_Learning_Models_Forecasts/Models - No Covariates')
 
 # NBEATS
 cpu_24_NBEATS <- unlist(read_csv('NBEATS_24.csv')[2])  
