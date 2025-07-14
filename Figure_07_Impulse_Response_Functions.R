@@ -6,7 +6,7 @@ library(readxl)
 ######################################### Linear impulse responses with local projections ######################################### 
 
 # Setting the working directory
-setwd('Forecasting-the-US-Climate-Policy-Uncertainty-using-Bayesian-Machine-Learning/Dataset/Data')
+setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Data')
 getwd()
 
 all_data <- read_xlsx("CPU_Data_Reduced.xlsx")
