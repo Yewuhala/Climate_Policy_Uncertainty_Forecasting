@@ -18,7 +18,7 @@ library(nonlinearTseries)
 library(seastests)
 library(car)
 
-setwd('Forecasting_Climate_Policy_Uncertainty_Evidence_from_the_United_States/Dataset/Data')
+setwd('Climate_Policy_Uncertainty_Forecasting/Dataset/Data')
 cpu_data <- read_xlsx('CPU_Data.xlsx')
 cpu_data$Date <- as.Date(cpu_data$Date)
 cpu_data$Date <- ydm(cpu_data$Date)
